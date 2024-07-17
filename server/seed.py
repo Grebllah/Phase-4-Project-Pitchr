@@ -8,10 +8,30 @@ from faker import Faker
 
 # Local imports
 from app import app
-from models import db
+from models import Post
+from config import db
+
+print("Starting seed...")
+
+fake = Faker()
+usernames = [fake.email() for i in range(4)]
+
+def make_posts():
+    Post.query.delete()
+    posts = []
+
+    for i in range(20):
+        post = Post(
+            body=fake.sentence(),
+            username=rc(usernames),
+        )
+        print(post)
+        posts.append(post)
+
+    db.session.add_all(posts)
+    db.session.commit()  
+    print("...", posts)
 
 if __name__ == '__main__':
-    fake = Faker()
     with app.app_context():
-        print("Starting seed...")
-        # Seed code goes here!
+        make_posts()

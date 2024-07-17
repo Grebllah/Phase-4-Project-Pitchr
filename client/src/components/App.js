@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home"
 import Login from "./Login"
+import PostList from "./PostList"
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Routes>
             <Route exact path="/" Component={Home}>
             </Route>
-            <Route path="/page2">
+            <Route path="/page2" Component={PostList}>
             </Route>
           </Routes>
         </BrowserRouter>
