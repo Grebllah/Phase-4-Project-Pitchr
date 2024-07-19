@@ -1,12 +1,34 @@
+import { Table, Card } from "react-bootstrap"
+
 function PostList () {
+
     return (
-        <div>
-            <h1>Posts:</h1>
-            <ul>
-                <li>post 1</li>
-                <li>post 2</li>
-            </ul>
-        </div>
+        <Card className="App">
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username:</th>
+                        <th>Title:</th>
+                        <th>Type:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>name</td>
+                        <td>title</td>
+                        <td>type</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>name2</td>
+                        <td>title2</td>
+                        <td>type2</td>
+                    </tr>
+                </tbody>
+            </Table>
+        </Card>
     )
 }
 

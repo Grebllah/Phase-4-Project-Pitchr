@@ -5,3 +5,12 @@
   --text: hsla(0, 0%, 100%, 0.88);
 }
 
+.App {
+  background-color: lightgrey;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

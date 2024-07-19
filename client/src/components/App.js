@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 import Home from "./Home"
-import Login from "./Login"
+// import Login from "./Login"
 import PostList from "./PostList"
+import { NavLink } from "react-bootstrap";
+import NavBar from "./NavBar";
 
 function App() {
+  // const [posts, setPosts] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:5555/posts")
+  //     .then((r) => r.json())
+  //     .then((posts) => setPosts(posts));
+  // }, []);
+
   return (
-      <div className="App">
+    <div className="App">
       <header className="App-header">
-        <BrowserRouter>
-          <div>
-            <Link className="App-link" to="/">Home</Link>
-            <Link className="App-link" to="/page2">Page2</Link>
-          </div>
-          <Routes>
-            <Route exact path="/" Component={Home}>
-            </Route>
-            <Route path="/page2" Component={PostList}>
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        <NavBar/>
       </header>
     </div>
-)
+  )
 }
 
 export default App;

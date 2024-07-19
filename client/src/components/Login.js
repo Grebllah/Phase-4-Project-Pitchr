@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Login() {
   // Access the login function passed as context
@@ -19,7 +20,7 @@ function Login() {
   // Create a function that calls the login function when the form is submitted
   function handleLogin(e) {
     e.preventDefault();
-    login();
+    console.log("Logged in")
   };
 
   return (
