@@ -12,14 +12,14 @@ from models import Post
 from config import db
 
 fake = Faker()
-usernames = [fake.email() for i in range(4)]
-titles = [fake.name() for i in range(10)]
+usernames = [fake.name() for i in range(4)]
+titles = [fake.word() for i in range(10)]
 
 def make_posts():
     Post.query.delete()
     posts = []
 
-    for i in range(20):
+    for i in range(3):
         post = Post(
             username=rc(usernames),
             title=rc(titles),
