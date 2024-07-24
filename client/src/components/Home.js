@@ -1,7 +1,5 @@
 import Login from "./Login";
-import NavBar from "./NavBar";
-import PostList from "./PostList";
-import { Table, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 function Home() {
   return (

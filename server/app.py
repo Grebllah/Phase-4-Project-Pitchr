@@ -12,6 +12,16 @@ from models import Post
 def index():
     return '<h1>Project Server</h1>'
 
+@app.route('/posts')
+def posts():
+    posts = Post.query.all()
+    response = make_response(
+        jsonify([post.to_dict() for post in posts]),
+        200,
+    )
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
 

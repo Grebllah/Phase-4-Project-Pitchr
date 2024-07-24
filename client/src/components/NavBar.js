@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import Home from "./Home";
 import PostList from "./PostList";
 
@@ -9,8 +9,8 @@ function NavBar() {
     <div className="App">
       <BrowserRouter>
         <div>
-          <Link className="App-link" to="/">Home</Link>
-          <Link className="App-link" to="/posts">Posts</Link>
+          <Link className={"App-link"} to="/">Home</Link>
+          <Link className={"App-link"} to="/posts">Posts</Link>
         </div>
         <Routes>
           <Route exact path="/" Component={Home}>

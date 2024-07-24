@@ -13,6 +13,7 @@ from config import db
 
 fake = Faker()
 usernames = [fake.email() for i in range(4)]
+titles = [fake.name() for i in range(10)]
 
 def make_posts():
     Post.query.delete()
@@ -21,15 +22,14 @@ def make_posts():
     for i in range(20):
         post = Post(
             username=rc(usernames),
-            title=fake.name,
+            title=rc(titles),
             type="poem",
             body=fake.sentence(),
         )
         posts.append(post)
 
     db.session.add_all(posts)
-    db.session.commit()  
-    print("...", posts)
+    db.session.commit()
 
 if __name__ == '__main__':
     with app.app_context():

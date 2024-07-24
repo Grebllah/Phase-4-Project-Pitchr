@@ -1,35 +1,28 @@
-import { Table, Card } from "react-bootstrap"
+// import { Table, Card } from "react-bootstrap"
+import { useEffect, useState } from "react"
 
 function PostList () {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5555/posts")
+      .then((r) => r.json())
+      .then((posts) => setPosts(posts));
+  }, []);
 
     return (
-        <Card className="App">
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Username:</th>
-                        <th>Title:</th>
-                        <th>Type:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>name</td>
-                        <td>title</td>
-                        <td>type</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>name2</td>
-                        <td>title2</td>
-                        <td>type2</td>
-                    </tr>
-                </tbody>
-            </Table>
-        </Card>
+        <div>
+            <ul>
+                {posts.map((post)=>(
+                    <Post
+                        username={post.username}
+                        title={post.title}
+                        type={post.type}
+                        body={post.body}
+                    />
+                ))}
+            </ul>
+        </div>
     )
-}
 
 export default PostList
